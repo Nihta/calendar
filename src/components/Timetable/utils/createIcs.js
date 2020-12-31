@@ -87,6 +87,7 @@ const lessonToTime = (lesson, isSummer = true) => {
     ["15:20", "16:10"],
     ["16:15", "17:05"],
     ["17:10", "18:00"],
+    ["18:05", "18:55"],
   ];
   // Giờ mùa đông
   const winter = [
@@ -100,6 +101,7 @@ const lessonToTime = (lesson, isSummer = true) => {
     ["14:50", "15:40"],
     ["15:45", "16:35"],
     ["16:40", "17:30"],
+    ["17:35", "18:25"],
   ];
 
   const map = isSummer ? summer : winter;
