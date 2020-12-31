@@ -64,6 +64,11 @@ const createDesc = ({
   description += lineData("Tiết học", lesson);
   description += lineData("Phòng học", location);
   description += lineData("Thời gian học", studyTime);
+  description += lineData(
+    "Trang chủ",
+    `<a href="https://nihta-cal.netlify.app" id="ow4
+  312" __is_owner="true">https://nihta-cal.netlify.app</a>`
+  );
 
   return description;
 };
@@ -163,7 +168,7 @@ const createIcs = (dataTimeTable, isSummer = true) => {
       product: "Nihta Calendar",
       language: "EN",
     },
-    domain: "nihta.tk",
+    domain: "https://nihta-cal.netlify.app",
     name: "Thời khóa biểu",
     description: "Thời khóa biểu",
     scale: "GREGORIAN",
@@ -206,6 +211,16 @@ const createIcs = (dataTimeTable, isSummer = true) => {
         until: `${studyTimeEnd}T23:59:59Z`,
         byDay,
       },
+      alarms: [
+        {
+          type: "display",
+          trigger: 1800,
+        },
+        {
+          type: "display",
+          trigger: 3600,
+        },
+      ],
     });
   });
 
