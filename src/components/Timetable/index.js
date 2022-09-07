@@ -9,6 +9,8 @@ function Timetable() {
   const [dataTimetable, setDataTimetable] = useState(undefined);
 
   const onDrop = useCallback((acceptedFiles) => {
+    console.log(acceptedFiles);
+
     acceptedFiles.forEach((file) => {
       const reader = new FileReader();
 
@@ -29,7 +31,6 @@ function Timetable() {
   const { getRootProps, getInputProps } = useDropzone({
     multiple: false,
     onDrop,
-    accept: ["application/vnd.ms-excel"],
   });
 
   const downloadCal = (isSummer) => {
@@ -51,7 +52,15 @@ function Timetable() {
         <section className="container">
           <div {...getRootProps({ className: "dropzone" })}>
             <input {...getInputProps()} />
-            <p>Kéo thả hoặc click vào đây để chọn tệp</p>
+            <p
+              style={{
+                textAlign: "center",
+              }}
+            >
+              Kéo thả hoặc click vào đây để chọn tệp
+              <br />
+              File xls hiển thị theo ngày học (cmcsoft)
+            </p>
           </div>
         </section>
       </Col>

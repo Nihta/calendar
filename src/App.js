@@ -11,6 +11,7 @@ function App() {
           <Timetable />
         </Col>
       </Row>
+      <p className="mt-4 text-info text-center">@Nihta 2020 - 2022</p>
     </Container>
   );
 }
